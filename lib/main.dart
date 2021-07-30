@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 // @widgets';
 import 'package:flutter_video_article/video_player/tabs_video_player/video_tabs.dart';
-import 'package:flutter_video_article/video_player/tabs_video_player/video_tabs_no_state.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: VideoTabsNoState(),
+      home: VideoTabs(),
     );
   }
 }

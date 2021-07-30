@@ -57,11 +57,14 @@ class PlayToggle extends StatelessWidget {
       ),
     );
 
-    Widget child = videoManager.isVideoEnded
-        ? replayWidget
-        : videoManager.isPlaying
-            ? pauseWidget
-            : playWidget;
+    Widget getWidget() {
+      if (videoManager.isVideoEnded) {
+        return replayWidget;
+      } else if (videoManager.isPlaying) {
+        return pauseWidget;
+      }
+      return playWidget;
+    }
 
     return Material(
       color: Colors.transparent,
@@ -79,7 +82,7 @@ class PlayToggle extends StatelessWidget {
             borderRadius: BorderRadius.circular(50),
           ),
           padding: EdgeInsets.all(10),
-          child: child,
+          child: getWidget(),
         ),
       ),
     );
